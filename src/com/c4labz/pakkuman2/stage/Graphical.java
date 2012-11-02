@@ -55,6 +55,31 @@ public class Graphical extends JFrame {
 		}
 		return true;
 	}
+	
+	public boolean overlapses(Graphical graphical) {
+
+		synchronized (lock) {
+		    if(this.getX() + this.width/2 > graphical.getX()
+		    		&& this.getX() < graphical.getX()+graphical.width/2){
+		    	return true;
+		    }
+		    else  if(this.getY() + this.height/2 > graphical.getY()
+		    		&& this.getY() < graphical.getY()+graphical.height/2){
+		    	return true;
+		    }
+		}
+		return false;
+	}
+	
+	public boolean overlapses(Graphical[] graphicals) {
+
+		for (Graphical g : graphicals) {
+			if (this.collidesWith(g)) {
+				return false;
+			}
+		}
+		return true;
+	}
 
 	public boolean setCoordinates(int x, int y) {
 
