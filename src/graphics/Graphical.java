@@ -3,9 +3,9 @@ package graphics;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-public class Graphical extends JFrame {
+public class Graphical extends JPanel {
 
 	private int x = 0;
 	private int y = 0;
@@ -17,8 +17,8 @@ public class Graphical extends JFrame {
 	
 
 	// Tile setup
-	final int WIDTH_OF_TILE = 20;
-	final int HEIGHT_OF_TILE = 15;
+	final int WIDTH_OF_TILE = 16;
+	final int HEIGHT_OF_TILE = 16;
 
 	private Object lock;
 

@@ -22,13 +22,16 @@ public class Theme {
 	// Pacman Graphics.
 	public ImageIcon pacmanIcon;
 
-	// Ghosts Graph.
+	// Ghosts Graphics.
 	public ImageIcon blinkyIcon;
 	public ImageIcon clydeIcon;
 	public ImageIcon inkyIcon;
 	public ImageIcon pinkyIcon;
 	public ImageIcon wallIcon;
-
+	
+	// Features Graphics.
+	public ImageIcon dotIcon;
+	
 	public String name;
 
 	/**
@@ -67,12 +70,14 @@ public class Theme {
 			pinkyIcon = new ImageIcon(new URL(path + "pinky.png"));
 			inkyIcon = new ImageIcon(new URL(path + "inky.png"));
 			wallIcon = new ImageIcon(new URL(path + "wall.png"));
-
+			dotIcon = new ImageIcon(new URL(path + "dot.png"));
+			
 			checkValidity(pacmanIcon);
 			checkValidity(blinkyIcon);
 			checkValidity(clydeIcon);
 			checkValidity(pinkyIcon);
 			checkValidity(inkyIcon);
+			checkValidity(dotIcon);
 
 		} catch (MalformedURLException e) {
 
@@ -122,6 +127,10 @@ public class Theme {
 	public Image getWallImage() {
 		return wallIcon.getImage();
 	}
+	
+	public Image getDotImage() {
+		return dotIcon.getImage();
+	}
 
 	/**
 	 * Returns an ArrayList containing all the sprites.
@@ -140,6 +149,7 @@ public class Theme {
 		images.add(getInkyImage());
 		images.add(getPinkyImage());
 		images.add(getWallImage());
+		images.add(getDotImage());
 
 		return images;
 	}
